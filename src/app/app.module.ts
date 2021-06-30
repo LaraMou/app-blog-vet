@@ -64,14 +64,6 @@ export function configFactory(provider: ConfigService) {
 
 
 const firebaseConfig = {
-  // apiKey: "AIzaSyDWWJabjt2AmSnfJR2gJZqROc9_KUDornM",
-  // authDomain: "app-vet-f1c88.firebaseapp.com",
-  // databaseURL: "https://app-vet-f1c88-default-rtdb.europe-west1.firebasedatabase.app",
-  // projectId: "app-vet-f1c88",
-  // storageBucket: "app-vet-f1c88.appspot.com",
-  // messagingSenderId: "270710178663",
-  // appId: "1:270710178663:web:472d81104d85c177a465c2",
-  // measurementId: "G-X2N693ERS4"
   apiKey: "AIzaSyBlNrlWi_yWDlqzKaL3Q2bw-QBt07MoZdE",
   authDomain: "blog-app-30f53.firebaseapp.com",
   databaseURL: "https://blog-app-30f53-default-rtdb.europe-west1.firebasedatabase.app",
