@@ -11,6 +11,7 @@ export class WidgetLastCommentsComponent implements OnInit {
 
   public listComments: IComment[];
 
+
   constructor(
     private commentService: CommentService
   ) {
@@ -18,7 +19,9 @@ export class WidgetLastCommentsComponent implements OnInit {
   }
 
   ngOnInit() {
-    // Obengo los comentarios
+
+    // Obtengo los comentarios
+    console.log("entro aqui")
     this.commentService.getLastComments().subscribe(lastComments => this.listComments = lastComments)
   }
 

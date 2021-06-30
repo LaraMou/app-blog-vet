@@ -38,7 +38,7 @@ export class PostsComponent implements OnInit {
   }
 
   ngOnInit() {
-
+    console.log("estoy en el post");
     // Obtengo los posts
     this.postService.getPosts().subscribe(posts => {
       // Obtengo las categorias

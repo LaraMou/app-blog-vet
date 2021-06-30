@@ -55,8 +55,7 @@ export function configFactory(provider: ConfigService) {
   return () => provider.getData();
 }
 
-// Configuracion del proyecto firebase
-// Cambiarlo con el de tu proyecto
+
 const firebaseConfig = {
   apiKey: "AIzaSyDWWJabjt2AmSnfJR2gJZqROc9_KUDornM",
   authDomain: "app-vet-f1c88.firebaseapp.com",
