@@ -1,0 +1,25 @@
+<h1>Deja tus mensajes</h1>
+<h6>Sitio de mensajes de usuarios</h6>
+<div class= "row">
+<div class="col-12 md-6 ms-12">
+<!-- Input para cambiar el Mensaje -->
+<input type="text" [(ngModel)]="nuevoMensaje" />
+<button class="btn btn-primary" (click)="enviarMensaje()">
+  Enviar
+</button>
+</div>
+
+</div>
+<!-- Botones que llaman al servicio para despachar acciones y actualizar el estado -->
+<div class="col-12 ms-6">
+
+</div>
+<div class="row">
+<div class="col-12">
+<button  class="btn btn-primary" (click)="cambiarValor()">
+  Aceptar
+</button>
+</div>
+</div>
+
+
