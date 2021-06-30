@@ -74,7 +74,7 @@
                 </ng-container>
                 <!-- Contateno con el pipe join -->
                 <ng-container *ngIf="post.categories && post.categories.length > 0">
-                  <span>{{post.categories | join: 'name':', '}}</span>  
+                  <span>{{post.categories | join: 'name':', '}}</span>
                 </ng-container>
 
 
@@ -100,8 +100,7 @@
         <button class="btn btn-primary" (click)="deletePosts()">{{'label.delete.posts' | translate}}</button>
       </div>
     </div>
-
-  </div>
+    </div>
 </div>
 
 <!-- Spinner -->

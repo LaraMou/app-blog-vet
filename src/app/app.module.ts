@@ -8,6 +8,10 @@ import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { AngularFireStorageModule } from '@angular/fire/storage';
 import { FormsModule } from '@angular/forms';
 import {AngularFireAuthModule} from '@angular/fire/auth';
+// NGRX (REDUX)
+import { StoreModule } from '@ngrx/store';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+
 // Module
 import { AppRoutingModule } from './app-routing.module';
 import { ChartModule } from 'primeng/chart';
@@ -45,6 +49,9 @@ import { WidgetUploadThumbnailComponent } from './components/dashboard/widget/wi
 import { LoginComponent } from './components/login/login.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
+import { MessageComponent } from './components/dashboard/message/message.component';
+import { ReceivedComponent } from './components/dashboard/received/received.component';
+import { RootReducer } from './store/reducers/rootReducer';
 
 
 export function translateFactory(provider: TranslateService) {
@@ -55,17 +62,25 @@ export function configFactory(provider: ConfigService) {
   return () => provider.getData();
 }
 
-// Configuracion del proyecto firebase
-// Cambiarlo con el de tu proyecto
+
 const firebaseConfig = {
-  apiKey: "AIzaSyDWWJabjt2AmSnfJR2gJZqROc9_KUDornM",
-  authDomain: "app-vet-f1c88.firebaseapp.com",
-  databaseURL: "https://app-vet-f1c88-default-rtdb.europe-west1.firebasedatabase.app",
-  projectId: "app-vet-f1c88",
-  storageBucket: "app-vet-f1c88.appspot.com",
-  messagingSenderId: "270710178663",
-  appId: "1:270710178663:web:472d81104d85c177a465c2",
-  measurementId: "G-X2N693ERS4"
+  // apiKey: "AIzaSyDWWJabjt2AmSnfJR2gJZqROc9_KUDornM",
+  // authDomain: "app-vet-f1c88.firebaseapp.com",
+  // databaseURL: "https://app-vet-f1c88-default-rtdb.europe-west1.firebasedatabase.app",
+  // projectId: "app-vet-f1c88",
+  // storageBucket: "app-vet-f1c88.appspot.com",
+  // messagingSenderId: "270710178663",
+  // appId: "1:270710178663:web:472d81104d85c177a465c2",
+  // measurementId: "G-X2N693ERS4"
+  apiKey: "AIzaSyBlNrlWi_yWDlqzKaL3Q2bw-QBt07MoZdE",
+  authDomain: "blog-app-30f53.firebaseapp.com",
+  databaseURL: "https://blog-app-30f53-default-rtdb.europe-west1.firebasedatabase.app",
+  projectId: "blog-app-30f53",
+  storageBucket: "blog-app-30f53.appspot.com",
+  messagingSenderId: "15769386117",
+  appId: "1:15769386117:web:7d32da669882aea1fcfdec",
+  measurementId: "G-SV48ZE3KZL"
+
 };
 
 @NgModule({
@@ -87,7 +102,9 @@ const firebaseConfig = {
     WidgetSelectCategoryComponent,
     WidgetUploadThumbnailComponent,
     JoinPipe,
-    LoginComponent
+    LoginComponent,
+    MessageComponent,
+    ReceivedComponent
   ],
   imports: [
     BrowserModule,
@@ -103,12 +120,21 @@ const firebaseConfig = {
     AngularEditorModule,
     AngularFireStorageModule,
     AngularFireAuthModule,
+
+
+    StoreModule.forRoot(RootReducer, {}),
+    StoreDevtoolsModule.instrument(
+      {
+        maxAge: 10, // Especificamos el número de acciones que se persisten en el tiempo
+      }
+    ),
     ServiceWorkerModule.register('ngsw-worker.js', {
       enabled: environment.production,
       // Register the ServiceWorker as soon as the app is stable
       // or after 30 seconds (whichever comes first).
       registrationStrategy: 'registerWhenStable:30000'
     })
+
   ],
   providers: [
     TranslateService,
