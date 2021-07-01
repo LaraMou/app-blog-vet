@@ -8,6 +8,12 @@ Dashboard simulated a blog app.
 
 npm run build:prod -> creates a dist folder with prod version
 
+## Deploy and using own server : http-server in local version
+npm i -g http-server
+
+## Comand to build and deploy in local version : script
+npm run deploy:prod
+
 # Exec all scripts
 npm start
 
